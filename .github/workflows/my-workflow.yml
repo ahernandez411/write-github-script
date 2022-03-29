@@ -1,4 +1,4 @@
-name: Learn Github Script
+name: Learning GitHub Script
 
 on:
   issues:
@@ -10,11 +10,11 @@ jobs:
     steps:
     - uses: actions/github-script@0.8.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           github.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: "Github script created this issue, woohoo!"
+            body: "🎉 You've created this issue comment using GitHub Script!!!"
           })
